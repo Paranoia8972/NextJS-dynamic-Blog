@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteRule ^post/([^/]+) /post.php?post_slug=$1 [L,QSA,NC]
+RewriteRule ^topic/([^/]+) filtered_posts.php?topic_id=$1 [L,QSA,NC]
+RewriteRule ^r/([^/]+) redirect.php?name=$1 [L,QSA,NC]

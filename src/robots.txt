@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /admin/
+Crawl-delay: 5
+Sitemap: https://blog.encryptopia.dev/sitemap.xml
