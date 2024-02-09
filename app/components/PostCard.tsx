@@ -3,7 +3,7 @@ import * as React from "react";
 export default function PostCard() {
   return (
     <div className="my-2 flex flex-col">
-      <a href="/path-to-your-post">
+      <a href="/post/asdf">
         <img
           src="https://picsum.photos/400/200"
           alt="Alt"
