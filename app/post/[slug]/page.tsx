@@ -5,7 +5,7 @@ export default function BlogArticle() {
     <div className="mx-auto mt-8 w-[900px] px-8">
       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
         <span className="mt-2 block text-center font-bold leading-8 tracking-tight sm:text-4xl">
-          The title of the blog
+          Title of the blog
         </span>
         <span className="block text-center text-base font-semibold uppercase tracking-wide text-primary">
           Jan 25, 2024
