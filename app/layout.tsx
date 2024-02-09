@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
-      <body className={`flex flex-col min-h-screen ${inter.className}`}>
+    <html lang="en">
+      <body className={`flex min-h-screen flex-col ${inter.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -3,9 +3,9 @@ import { ModeToggle } from "./ModeToggle";
 
 export default function Navbar() {
   return (
-    <nav className="w-full relative flex items-center justify-between mx-auto px-4 py-5">
-      <Link href="/" className="font-bold text-3xl">
-      <span className="text-primary">Encryptopia</span> Blog
+    <nav className="relative mx-auto flex w-full items-center justify-between px-4 py-5">
+      <Link href="/" className="text-3xl font-bold">
+        <span className="text-primary text-blue-500">Encryptopia</span> Blog
       </Link>
 
       <ModeToggle />
