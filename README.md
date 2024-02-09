@@ -12,7 +12,9 @@ First, you need to create a new Collection in PocketBase:
 | body | Rich editor | true |
 | likes | number | false |
 
-Second, run the development server:
+Second, configure the URL for PocketBase in [pb.config.js](https://github.com/Paranoia8972/Blog-Source-Code/blob/main/pb.config.js)
+
+Third, run the development server:
 
 ```bash
 npm run dev
