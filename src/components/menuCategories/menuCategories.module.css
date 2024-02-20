@@ -1,0 +1,33 @@
+.categoryList {
+  margin-top: 35px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.categoryItem {
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.categoryItem.linux {
+  background-color: #57c4ff31;
+}
+
+.categoryItem.raspi {
+  background-color: #da85c731;
+}
+
+.categoryItem.hacking {
+  background-color: #7fb88133;
+}
+
+.categoryItem.server {
+  background-color: #ff795736;
+}
+
+.categoryItem.coding {
+  background-color: #5e4fff31;
+}
