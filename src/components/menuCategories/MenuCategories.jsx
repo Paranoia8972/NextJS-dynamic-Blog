@@ -15,13 +15,19 @@ const MenuCategories = () => {
         className={`${styles.categoryItem} ${styles.raspi}`}>
         Raspberry Pi
       </Link>
-      <Link href="/blog?cat=hacking" className={`${styles.categoryItem} ${styles.hacking}`}>
-      Hacking
+      <Link
+        href="/blog?cat=hacking"
+        className={`${styles.categoryItem} ${styles.hacking}`}>
+        Hacking
       </Link>
-      <Link href="/blog?cat=server" className={`${styles.categoryItem} ${styles.server}`}>
+      <Link
+        href="/blog?cat=server"
+        className={`${styles.categoryItem} ${styles.server}`}>
         Server
       </Link>
-      <Link href="/blog?cat=coding" className={`${styles.categoryItem} ${styles.coding}`}>
+      <Link
+        href="/blog?cat=coding"
+        className={`${styles.categoryItem} ${styles.coding}`}>
         Coding
       </Link>
     </div>
