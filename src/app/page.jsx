@@ -19,7 +19,7 @@ export default function Home({ searchParams }) {
           content="My wired knowledge, noted down."
         />
         <meta property="og:url" content="https://blog.encryptopia.dev" />
-        <meta property="og:image" content="og-image.webp" />
+        <meta property="og:image" content="opengraph-image.png" />
         <meta property="og:image:alt" content="Encryptopia Blog" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -30,11 +30,11 @@ export default function Home({ searchParams }) {
           name="twitter:description"
           content="My wired knowledge, noted down."
         />
-        <meta name="twitter:image" content="og-image.webp" />
+        <meta name="twitter:image" content="twitter-image.png" />
         <meta name="twitter:image:alt" content="Encryptopia Blog" />
       </Head>
-      <div className={styles.container}>
-        <div className={styles.content}>
+      <div>
+        <div className="flex gap-[50px]">
           <CardList page={page} />
         </div>
       </div>
