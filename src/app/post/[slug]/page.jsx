@@ -33,15 +33,13 @@ const SinglePage = async ({ params }) => {
               })}
             </span>
           </h1>
-          {data?.img && (
-            <Image
-              src={data.img}
-              alt={data?.title}
-              width={900}
-              height={450}
-              className="mx-auto mt-8 h-[450px] w-[900px] rounded-[15px] border object-cover"
-            />
-          )}
+          <Image
+            src={data.img}
+            alt={data?.title}
+            width={900}
+            height={450}
+            className="mx-auto mt-8 h-[450px] w-[900px] rounded-[15px] border object-cover"
+          />
         </div>
       </div>
       <div className="prose prose-lg prose-blue prose-invert mt-16 flex-[5] prose-li:marker:text-blue-500">
