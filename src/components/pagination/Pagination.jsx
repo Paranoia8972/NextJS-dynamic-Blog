@@ -9,15 +9,17 @@ const Pagination = ({ page, hasPrev, hasNext }) => {
   return (
     <div className="flex justify-between">
       <button
-        className="w-[100px] bg-[royalblue] text-white cursor-pointer p-4 border-[none] rounded-md disabled:bg-[midnightblue] disabled:cursor-not-allowed;"
+        className="disabled:cursor-not-allowed; w-[100px] cursor-pointer rounded-md border-[none] bg-[royalblue] p-4 text-white disabled:bg-[midnightblue]"
         disabled={!hasPrev}
-        onClick={() => router.push(`?page=${page - 1}`)}>
+        onClick={() => router.push(`?page=${page - 1}`)}
+      >
         Previous
       </button>
       <button
         disabled={!hasNext}
-        className="w-[100px] bg-[royalblue] text-white cursor-pointer p-4 border-[none] disabled:bg-[midnightblue] disabled:cursor-not-allowed;"
-        onClick={() => router.push(`?page=${page + 1}`)}>
+        className="disabled:cursor-not-allowed; w-[100px] cursor-pointer border-[none] bg-[royalblue] p-4 text-white disabled:bg-[midnightblue]"
+        onClick={() => router.push(`?page=${page + 1}`)}
+      >
         Next
       </button>
     </div>

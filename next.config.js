@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "lh3.googleusercontent.com ",
+        hostname: "lh3.googleusercontent.com",
       },
       {
         protocol: "https",
@@ -13,9 +13,9 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "github.com",
-      }
+      },
     ],
   },
 };
 
-module.exports = nextConfig;
+module.exports = { output: "standalone", nextConfig };

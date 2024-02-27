@@ -56,7 +56,7 @@ const WritePage = () => {
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
               setMedia(downloadURL);
             });
-          }
+          },
         );
       };
 
@@ -88,7 +88,7 @@ const WritePage = () => {
         desc: value,
         img: media,
         slug: slugify(title),
-        catSlug: catSlug || "style", //If not selected, choose the general category
+        catSlug: catSlug || "coding", //If not selected, choose the general category
       }),
     });
 
@@ -108,7 +108,8 @@ const WritePage = () => {
       />
       <select
         className={styles.select}
-        onChange={(e) => setCatSlug(e.target.value)}>
+        onChange={(e) => setCatSlug(e.target.value)}
+      >
         <option value="raspi">Raspberry Pi</option>
         <option value="linux">Linux</option>
         <option value="hacking">Hacking</option>
