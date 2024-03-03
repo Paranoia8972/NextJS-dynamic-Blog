@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import styles from "./writePage.module.css";
-import { useEffect, useState } from "react";
-import "react-quill/dist/quill.bubble.css";
+import { useEffect, useState, useRef } from "react";
+import BundledEditor from "@/utils/BundleEditor";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import {
@@ -13,10 +13,12 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
-import dynamic from "next/dynamic";
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 const WritePage = () => {
+  // TINYMCE
+  const [editorContent, setEditorContent] = useState("");
+  const [state, setState] = useState("");
+
   const { status } = useSession();
   const router = useRouter();
 
@@ -81,20 +83,25 @@ const WritePage = () => {
       .replace(/^-+|-+$/g, "");
 
   const handleSubmit = async () => {
+    if (!title) {
+      alert("Title cannot be empty");
+      return;
+    }
+
     const res = await fetch("/api/posts", {
       method: "POST",
       body: JSON.stringify({
         title,
-        desc: value,
+        desc: editorContent,
         img: media,
         slug: slugify(title),
-        catSlug: catSlug || "coding", //If not selected, choose the general category
+        catSlug: catSlug || "coding",
       }),
     });
 
     if (res.status === 200) {
       const data = await res.json();
-      router.push(`/posts/${data.slug}`);
+      router.push(`/post/${data.slug}`);
     }
   };
 
@@ -105,6 +112,7 @@ const WritePage = () => {
         placeholder="Title"
         className={styles.input}
         onChange={(e) => setTitle(e.target.value)}
+        required
       />
       <select
         className={styles.select}
@@ -141,12 +149,31 @@ const WritePage = () => {
             </button>
           </div>
         )}
-        <ReactQuill
-          className={styles.textArea}
-          theme="bubble"
-          value={value}
-          onChange={setValue}
-          placeholder="Tell your story..."
+        <BundledEditor
+          init={{
+            height: 500,
+            menubar: false,
+            plugins: [
+              "advlist",
+              "anchor",
+              "autolink",
+              "image",
+              "link",
+              "lists",
+              "searchreplace",
+              "table",
+              "wordcount",
+              "codesample",
+            ],
+            toolbar:
+              "undo redo | blocks codesample | " +
+              "bold italic forecolor | alignleft aligncenter " +
+              "alignright alignjustify | bullist numlist outdent indent | " +
+              "removeformat",
+            content_style:
+              "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+          }}
+          onEditorChange={(content) => setEditorContent(content)}
         />
       </div>
       <button className={styles.publish} onClick={handleSubmit}>
