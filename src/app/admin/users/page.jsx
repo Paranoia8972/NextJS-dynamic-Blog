@@ -1,5 +1,7 @@
 "use client";
 
-return <></>;
+return (
+  <p>Users</p>
+  );
 
-export default WritePage;
+export default UserPage;
