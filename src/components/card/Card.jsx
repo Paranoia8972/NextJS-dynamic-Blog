@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Card = ({ key, item }) => {
+const Card = ({ item }) => {
   return (
     <div className="my-2 flex flex-col">
       <Link href={`/post/${item.slug}`}>

@@ -1,3 +1,5 @@
+@import "/public/prism/prism.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
