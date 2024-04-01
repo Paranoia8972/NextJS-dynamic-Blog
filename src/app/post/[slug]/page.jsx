@@ -1,27 +1,25 @@
-import Script from "next/script";
 import Image from "next/image";
+import Script from "next/script";
+import "../../../../public/prism/prism.js";
 import "../../../../public/prism/prism.css";
+import "../../../../public/prism/prism-duotone-sea.css";
+
 const getData = async (slug) => {
   const res = await fetch(`${process.env.PUBLIC_URL}/api/posts/${slug}`, {
     cache: "no-store",
   });
-
   if (!res.ok) {
     throw new Error("Failed");
   }
-
   return res.json();
 };
-
 const SinglePage = async ({ params }) => {
   const { slug } = params;
-
   const data = await getData(slug);
-
   return (
     <>
       <Script src="/prism/prism.js" />
-      <div className="mx-auto mt-8 w-[900px] px-8">
+      <div className="mx-auto mt-8 w-[900px]">
         <div className="flex items-center gap-[50px]">
           <div className="flex-[1]">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
@@ -41,16 +39,14 @@ const SinglePage = async ({ params }) => {
               alt={data?.title}
               width={900}
               height={450}
-              className="mx-auto mt-8 h-[450px] w-[900px] rounded-[15px] border object-cover"
+              className="mt-8 h-[450px] w-[900px] rounded-[15px] border object-cover"
             />
           </div>
         </div>
-        <div className="prose prose-lg prose-blue prose-invert mt-16 flex-[5] prose-li:marker:text-blue-500">
-          <div
-            className="mb-5 text-xl font-light sm:text-lg"
-            dangerouslySetInnerHTML={{ __html: data?.desc }}
-          />
-        </div>
+        <div
+          className="prose prose-lg prose-blue prose-invert mb-5 mt-16 text-xl font-light prose-li:marker:text-blue-500 sm:text-lg"
+          dangerouslySetInnerHTML={{ __html: data?.desc }}
+        />
       </div>
     </>
   );

@@ -8,7 +8,7 @@ const Card = ({ item }) => {
         <Image
           src={item.img}
           alt={item.slug}
-          className="h-[200px] w-[400px] cursor-pointer rounded-xl border object-cover"
+          className="cursor-pointer rounded-xl border object-cover aspect-video"
           width={400}
           height={200}
         />

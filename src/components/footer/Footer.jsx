@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className={styles.container}>
+    <div className="flex items-center justify-between text-[color:var(--softTextColor)] mt-[50px] px-0 py-5 border-t">
       <div className={styles.info}>
         <div className={styles.logo}>
           <Image

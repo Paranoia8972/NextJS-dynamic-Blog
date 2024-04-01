@@ -36,3 +36,4 @@ next-env.d.ts
 
 # ... other rules omitted for brevity ...
 /public/tinymce/
+certificates
