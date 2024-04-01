@@ -1,10 +1,7 @@
-"use client";
-
-import Image from "next/image";
+"use client"
 import { useEffect, useState } from "react";
-import "react-quill/dist/quill.snow.css";
-import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import {
   getStorage,
   ref,
@@ -12,8 +9,11 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
-import ReactQuill from "react-quill";
 import { FiUploadCloud } from "react-icons/fi";
+import Image from "next/image";
+import dynamic from 'next/dynamic';
+
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 const WritePage = () => {
   const { status } = useSession();
@@ -178,7 +178,7 @@ const WritePage = () => {
           {contentError && <p className="text-red-500 mt-2">The content is required.</p>}
         </div>
       </div>
-    </div >
+    </div>
   );
 };
 
