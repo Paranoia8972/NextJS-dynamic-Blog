@@ -1,7 +1,4 @@
-import { Inter } from "next/font/google";
-import Sidebar from "@/components/sideBar/SideBar";
-
-const inter = Inter({ subsets: ["latin"] });
+import Sidebar from '@/components/SideBar';
 
 export default function AdminLayout({ children }) {
   return (

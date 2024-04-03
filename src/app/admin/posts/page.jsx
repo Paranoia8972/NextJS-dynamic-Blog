@@ -1,4 +1,4 @@
-export default function CommentsPage() {
+export default function PostsPage() {
   return (
     <>
       <h1>Posts</h1>

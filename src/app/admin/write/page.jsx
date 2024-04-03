@@ -12,7 +12,8 @@ import { app } from "@/utils/firebase";
 import { FiUploadCloud } from "react-icons/fi";
 import Image from "next/image";
 import dynamic from 'next/dynamic';
-
+import "react-quill/dist/quill.bubble.css";
+import "react-quill/dist/quill.snow.css";
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 const WritePage = () => {
@@ -154,13 +155,15 @@ const WritePage = () => {
             )}
           </label>
         </div>
-        <ReactQuill
-          className="border rounded-xl w-[900px] h-[450px] prose prose-lg prose-blue prose-invert mb-5 mt-16 text-xl font-light prose-li:marker:text-blue-500 sm:text-lg"
-          theme="snow"
-          value={value}
-          onChange={setValue}
-          placeholder="Tell your story..."
-        />
+        <div className="w-[900px] h-[450px]">
+          <ReactQuill
+            className="rounded-xl w-[900px] h-[450px] prose prose-lg prose-blue prose-invert mb-5 mt-16 text-xl font-light prose-li:marker:text-blue-500 sm:text-lg"
+            theme="snow"
+            value={value}
+            onChange={setValue}
+            placeholder="Tell your story..."
+          />
+        </div>
         <select className="text-white bg-transparent border rounded-lg w-32" onChange={(e) => setCatSlug(e.target.value)}>
           <option value="style">style</option>
           <option value="fashion">fashion</option>

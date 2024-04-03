@@ -16,6 +16,22 @@ export const authOptions = {
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.isAdmin = user.isAdmin;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (token) {
+        session.user.id = token.id;
+        session.user.isAdmin = token.isAdmin;
+      }
+      return session;
+    },
+  }
 };
 
 export const getAuthSession = () => getServerSession(authOptions);

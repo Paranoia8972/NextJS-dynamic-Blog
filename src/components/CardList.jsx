@@ -1,14 +1,14 @@
 import React from "react";
-import Pagination from "../pagination/Pagination";
+import Pagination from "@/components/Pagination";
 import Image from "next/image";
-import Card from "../card/Card";
+import Card from "@/components/Card";
 
 const getData = async (page, cat) => {
   const res = await fetch(
-    `${process.env.PUBLIC_URL}/api/posts?page=${page}&cat=${cat || ""}`,
+    `${process.env.BASE_URL}/api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
-    },
+    }
   );
 
   if (!res.ok) {
@@ -21,10 +21,13 @@ const getData = async (page, cat) => {
 const CardList = async ({ page, cat }) => {
   const { posts, count } = await getData(page, cat);
 
-  const POST_PER_PAGE = 6;
+  const POST_PER_PAGE = 2;
 
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
+
+
+  const pageNumbers = [];
 
   return (
     <div className="mx-auto flex-[5]">
