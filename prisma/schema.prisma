@@ -53,7 +53,6 @@ model User {
   Post          Post[]
   Comment       Comment[]
   Role Role @default(USER)
-  role          String?
 }
 
 model VerificationToken {
