@@ -1,9 +1,8 @@
+import Link from "next/link";
 import CategoryList from "@/components/CategoryList";
 
-const SinglePage = async ({ }) => {
+export default function CategoryPage({ }) {
     return (
         <CategoryList />
     );
-};
-
-export default SinglePage;
+}

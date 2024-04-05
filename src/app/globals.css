@@ -39,3 +39,22 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+
+::-webkit-scrollbar {
+  width: 0.32rem;
+  height: 0.5rem;
+  background-color: transparent;
+  position: fixed;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #2563eb;
+}

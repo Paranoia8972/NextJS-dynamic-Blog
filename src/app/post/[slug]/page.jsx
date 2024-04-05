@@ -4,7 +4,6 @@ import "../../../../public/prism/prism.js";
 import "../../../../public/prism/prism.css";
 import "../../../../public/prism/prism-duotone-sea.css";
 import Comments from "@/components/Comments";
-
 const getData = async (slug) => {
   console.log(process.env.BASE_URL, slug);
   const res = await fetch(`${process.env.BASE_URL}/api/posts/${slug}`, {
@@ -46,7 +45,7 @@ const SinglePage = async ({ params }) => {
           </div>
         </div>
         <div
-          className="prose prose-lg prose-blue prose-invert mb-5 mt-16 mx-6 text-xl font-light prose-li:marker:text-blue-500 sm:text-lg"
+          className="prose prose-lg prose-blue prose-invert mb-5 mt-16 mx-6 text-xl font-light prose-li:marker:text-blue-500 sm:text-lg text-[#fafafa]"
           dangerouslySetInnerHTML={{ __html: data?.desc }}
         />
         <div className="mx-6">

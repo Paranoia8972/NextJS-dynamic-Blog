@@ -25,7 +25,7 @@ const Footer = () => {
           >
             <span className="sr-only">Back to top</span>
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="http://www.w3.org/3000/svg"
               className="h-5 w-5"
               viewBox="0 0 20 20"
               fill="currentColor"
@@ -51,13 +51,13 @@ const Footer = () => {
               />
               <h1 className="text-2xl">Encryptopia</h1>
             </div>
-            <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left">
+            <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-400 lg:text-left">
               My wierd knowledge, noted down.
             </p>
           </div>
           <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
             <li>
-              <Link className="text-gray-700 transition hover:text-gray-700/75" href="#">
+              <Link className="text-gray-300 transition hover:text-gray-300/75" href="#">
                 {status === "unauthenticated" ? (
                   <Link href="/login" className="cursor-pointer">
                     Login
@@ -71,17 +71,17 @@ const Footer = () => {
             </li>
 
             <li>
-              <Link className="text-gray-700 transition hover:text-gray-700/75" href="/categories">
+              <Link className="text-gray-300 transition hover:text-gray-300/75" href="/categories">
                 Categories
               </Link>
             </li>
             <li>
-              <Link className="text-gray-700 transition hover:text-gray-700/75" href="https://encryptopia.dev/dsgvo">
+              <Link className="text-gray-300 transition hover:text-gray-300/75" href="https://encryptopia.dev/dsgvo">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link className="text-gray-700 transition hover:text-gray-700/75" href="https://encryptopia.dev/impressum">
+              <Link className="text-gray-300 transition hover:text-gray-300/75" href="https://encryptopia.dev/impressum">
                 Imprint
               </Link>
             </li>
