@@ -19,11 +19,14 @@ const LoginPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.socialButton} onClick={() => signIn("google")}>
-          Sign in with Google
+        <div className={styles.socialButton} onClick={() => signIn("gitlab")}>
+          Sign in with GitLab
         </div>
         <div className={styles.socialButton} onClick={() => signIn("github")}>
-          Sign in with Github
+          Sign in with GitHub
+        </div>
+        <div className={styles.socialButton} onClick={() => signIn("bitbucket")}>
+          Sign in with BitBucket
         </div>
       </div>
     </div>
