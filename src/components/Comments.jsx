@@ -4,6 +4,7 @@ import Image from "next/image";
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
+import { formatDistanceToNow } from 'date-fns';
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -37,7 +38,7 @@ const Comments = ({ postSlug }) => {
       {status === "authenticated" ? (
         <div className="flex items-center justify-between gap-[30px]">
           <textarea
-            placeholder="write a comment..."
+            placeholder="Write a comment..."
             className="w-full p-5"
             onChange={(e) => setDesc(e.target.value)}
           />
@@ -63,12 +64,16 @@ const Comments = ({ postSlug }) => {
                     className="object-cover rounded-full"
                   />
                 )}
-                <div className="flex flex-col gap-[5px] text-[color:var(--softTextColor)]">
-                  <span className="font-medium">{item.user.name}</span>
-                  <span className="text-sm">{item.createdAt}</span>
+                <div className="flex flex-col gap-[5px]">
+                  <div className="flex items-center gap-[12px]">
+                    <h2 className="font-medium text-lg">{item.user.name}</h2>
+                    <span className="text-sm text-gray-500">
+                      {formatDistanceToNow(new Date(item.createdAt))} ago
+                    </span>
+                  </div>
+                  <p className="text-lg font-light">{item.desc}</p>
                 </div>
               </div>
-              <p className="text-lg font-light">{item.desc}</p>
             </div>
           ))}
       </div>

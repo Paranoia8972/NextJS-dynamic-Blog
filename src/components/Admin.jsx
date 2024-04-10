@@ -1,10 +1,11 @@
 "use client"
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { useSession } from "next-auth/react";
 
-const Admin = async () => {
+const Admin = () => {
     const router = useRouter();
-    const session = await getServerSession(authOptions);
+    const session = getServerSession(authOptions);
     const { status } = useSession();
 
     useEffect(() => {

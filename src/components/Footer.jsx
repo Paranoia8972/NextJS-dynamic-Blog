@@ -43,7 +43,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2.5 lg:justify-start">
               <Image
-                src="https://github.com/paranoia8972.png"
+                src="https://github.com/Encryptopia.png"
                 alt="paranoia8972"
                 width={50}
                 height={50}
