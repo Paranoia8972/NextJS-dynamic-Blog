@@ -52,12 +52,12 @@ const Comments = ({ postSlug }) => {
         {isLoading
           ? "loading"
           : data?.map((item) => (
-            <div className="mb-[50px]" key={item._id}>
+            <div className="mb-[50px] border" key={item._id}>
               <div className="flex items-center gap-5 mb-5">
                 {item?.user?.image && (
                   <Image
                     src={item.user.image}
-                    alt=""
+                    alt={item.user.name}
                     width={50}
                     height={50}
                     className="object-cover rounded-full"
