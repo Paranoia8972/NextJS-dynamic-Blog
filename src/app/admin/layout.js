@@ -1,7 +1,5 @@
 import Navbar from "@/components/Navbar";
-import "./globals.css";
 import Footer from "@/components/Footer";
-import AuthProvider from "@/providers/AuthProvider";
 import { Inter } from "next/font/google";
 
 const font = Inter({
