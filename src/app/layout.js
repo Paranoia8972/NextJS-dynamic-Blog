@@ -15,11 +15,6 @@ const font = Inter({
   lineHeight: '36px',
 });
 
-export const metadata = {
-  title: "Encryptopia Blog",
-  description: "My weired knowledge, noted down.",
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

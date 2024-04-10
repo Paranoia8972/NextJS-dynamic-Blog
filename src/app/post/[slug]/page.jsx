@@ -4,6 +4,7 @@ import "../../../../public/prism/prism.js";
 import "../../../../public/prism/prism.css";
 import "../../../../public/prism/prism-duotone-sea.css";
 import Comments from "@/components/Comments";
+
 const getData = async (slug) => {
   console.log(process.env.BASE_URL, slug);
   const res = await fetch(`${process.env.BASE_URL}/api/posts/${slug}`, {
@@ -14,9 +15,20 @@ const getData = async (slug) => {
   }
   return res.json();
 };
+
 const SinglePage = async ({ params }) => {
   const { slug } = params;
   const data = await getData(slug);
+
+  const metadata = {
+    title: data?.title,
+    description: 'My wierd knowledge, noted down.',
+    openGraph: {
+      title: data?.title,
+      description: 'My wierd knowledge, noted down.',
+      images: data.img,
+    },
+  };
   return (
     <>
       <Script src="/prism/prism.js" />
