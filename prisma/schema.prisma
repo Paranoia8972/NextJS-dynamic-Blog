@@ -52,7 +52,7 @@ model User {
   sessions      Session[]
   Post          Post[]
   Comment       Comment[]
-  Role Role @default(USER)
+  role Role @default(USER)
 }
 
 model VerificationToken {
